@@ -9,7 +9,7 @@ const app = express();
 app.use(express.json());
 
 /**
- * Create an exercise
+ * Create an exercises
  */
 app.post('/exercises', (req, res) => {
 
