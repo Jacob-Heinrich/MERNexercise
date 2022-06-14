@@ -67,9 +67,6 @@ app.get('/exercises/:_id',(req,res)=>{
 app.put('/exercises/:_id',(req,res)=>{
 
   // Validates to make sure all update inputs are valid
-  const format = /^\d\d-\d\d-\d\d$/;
-  const formatted = format.test(req.body.date);
-  if(!formatted)return res.status(400).json({Error:"Invalid request"});
   if(req.body.name.length < 1) return res.status(400).json({Error:"Invalid request"});
   if(req.body.reps < 1) return res.status(400).json({Error:"Invalid request"});
   if(req.body.weight < 1) return res.status(400).json({Error:"Invalid request"});
