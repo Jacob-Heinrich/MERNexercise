@@ -7,7 +7,6 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.json());
-
 /**
  * Create an exercises
  */
@@ -108,7 +107,7 @@ app.delete('/exercises/:_id',(req,res)=>{
 
 
 if (process.env.NODE_ENV === 'production'){
-  app.use(express.static('./client/build'));
+  app.use(express.static('client/build'));
 }
 
 app.listen(PORT, () => {
