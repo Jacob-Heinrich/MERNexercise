@@ -2,9 +2,7 @@ import 'dotenv/config';
 import * as exercise from './exercises_model.mjs';
 import express from 'express';
 
-
 const PORT = process.env.PORT || 8080;
-
 
 const app = express();
 
@@ -106,6 +104,7 @@ app.delete('/exercises/:_id',(req,res)=>{
       res.send({Error:'Not Found'});
     });
 })
+
 
 app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}...`);
