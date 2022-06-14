@@ -1,11 +1,13 @@
 import 'dotenv/config';
 import * as exercise from './exercises_model.mjs';
 import express from 'express';
+import cors from 'cors';
 
 const app = express();
 
 
 app.use(express.json());
+
 /**
  * Create an exercises
  */
@@ -32,7 +34,7 @@ app.post('/exercises', (req, res) => {
 });
 
 //  Read database of exercises
-app.get('/exercises',(req,res)=>{
+app.get('/exercises',cors(),(req,res)=>{
   let filter = {};
   exercise.findExercises(filter)
     .then(exercises => {
@@ -45,7 +47,7 @@ app.get('/exercises',(req,res)=>{
 })
 
 // Get exercise using ID
-app.get('/exercises/:_id',(req,res)=>{
+app.get('/exercises/:_id',cors(),(req,res)=>{
   const exerciseId = req.params._id;
   exercise.findExerciseById(exerciseId)
     .then(exercises =>{
@@ -62,7 +64,7 @@ app.get('/exercises/:_id',(req,res)=>{
 
 
 // Update exercise
-app.put('/exercises/:_id',(req,res)=>{
+app.put('/exercises/:_id',cors(),(req,res)=>{
 
   // Validates to make sure all update inputs are valid
   const format = /^\d\d-\d\d-\d\d$/;
@@ -89,7 +91,7 @@ app.put('/exercises/:_id',(req,res)=>{
 
 
 // Delete using ID
-app.delete('/exercises/:_id',(req,res)=>{
+app.delete('/exercises/:_id',cors(),(req,res)=>{
   exercise.deleteById(req.params._id)
     .then(deletedCount =>{
       if(deletedCount === 1){
