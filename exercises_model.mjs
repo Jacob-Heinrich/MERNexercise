@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 import 'dotenv/config';
 
 mongoose.connect(process.env.MONGODB_URI ||
-    process.env.MONGODB_CONNECT_STRING,
+    'mongodb+srv://Project7:Project7@project7cluster.n8qhq2d.mongodb.net/exercises?retryWrites=true&w=majority',
     { useNewUrlParser: true }
 );
 
