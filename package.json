@@ -4,7 +4,7 @@
   "description": "",
   "main": "exercises_controller.mjs",
   "scripts": {
-    "start": "nodemon exercises_controller.mjs"
+    "start": "node exercises_controller.mjs"
   },
   "author": "",
   "license": "ISC",

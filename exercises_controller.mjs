@@ -3,7 +3,6 @@ import * as exercise from './exercises_model.mjs';
 import express from 'express';
 
 const app = express();
-const PORT = 3000;
 
 
 app.use(express.json());
