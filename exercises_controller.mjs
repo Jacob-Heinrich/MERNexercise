@@ -11,7 +11,7 @@ app.use(cors());
 /**
  * Create an exercises
  */
-app.post('/exercises', (req, res) => {
+app.post('/exercises', cors(),(req, res) => {
 
     // Checks to see if inputs are valid
     const unitList = ["lbs","kgs"]

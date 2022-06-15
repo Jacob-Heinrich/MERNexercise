@@ -32,7 +32,6 @@ const Exercise = mongoose.model("Exercise", exercisesSchema);
 
 // Create an exercise
 const createExercise = async(name,reps,weight,unit,date)=>{
-  console.log(name)
   const exercise = new Exercise({name:name, reps:reps, weight:weight, unit:unit, date:date});
   return exercise.save();
 }
