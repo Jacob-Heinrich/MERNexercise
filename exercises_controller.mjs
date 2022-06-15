@@ -14,6 +14,7 @@ app.use(cors());
 app.post('/exercises', (req, res) => {
 
     // Checks to see if inputs are valid
+    console.log(req.body.name)
     const unitList = ["lbs","kgs"]
     const format = /^\d\d-\d\d-\d\d$/;
     const formatted = format.test(req.body.date);
